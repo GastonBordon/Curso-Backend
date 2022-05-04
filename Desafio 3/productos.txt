@@ -1,0 +1,98 @@
+[
+  {
+    "id": 2,
+    "title": "Microscopio",
+    "price": 1250,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png"
+  },
+  {
+    "id": 1,
+    "title": "Paleta de Pintor",
+    "price": 168,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-06-512.png"
+  },
+  {
+    "id": 2,
+    "title": "Microscopio",
+    "price": 1250,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png"
+  },
+  {
+    "id": 1,
+    "title": "Paleta de Pintor",
+    "price": 168,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-06-512.png"
+  },
+  {
+    "id": 2,
+    "title": "Microscopio",
+    "price": 1250,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png"
+  },
+  {
+    "id": 1,
+    "title": "Paleta de Pintor",
+    "price": 168,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-06-512.png"
+  },
+  {
+    "id": 2,
+    "title": "Microscopio",
+    "price": 1250,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png"
+  },
+  {
+    "id": 1,
+    "title": "Paleta de Pintor",
+    "price": 168,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-06-512.png"
+  },
+  {
+    "id": 2,
+    "title": "Microscopio",
+    "price": 1250,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png"
+  },
+  {
+    "id": 1,
+    "title": "Paleta de Pintor",
+    "price": 168,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-06-512.png"
+  },
+  {
+    "id": 2,
+    "title": "Microscopio",
+    "price": 1250,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png"
+  },
+  {
+    "id": 1,
+    "title": "Paleta de Pintor",
+    "price": 168,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-06-512.png"
+  },
+  {
+    "id": 2,
+    "title": "Microscopio",
+    "price": 1250,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png"
+  },
+  {
+    "id": 1,
+    "title": "Paleta de Pintor",
+    "price": 168,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-06-512.png"
+  },
+  {
+    "id": 2,
+    "title": "Microscopio",
+    "price": 1250,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png"
+  },
+  {
+    "id": 1,
+    "title": "Paleta de Pintor",
+    "price": 168,
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-06-512.png"
+  }
+]
