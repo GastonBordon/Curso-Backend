@@ -40,7 +40,7 @@ router.put("/:id", async (req, res) => {
     }
   }
   await Contenedor.deleteById(req.params.id);
-  await Contenedor.saveInFile(productById);
+  await Contenedor.updateFile(productById);
 
   res.json({
     msg: productById,

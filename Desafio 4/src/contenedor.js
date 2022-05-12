@@ -61,7 +61,15 @@ class ContenedorArchivo {
       throw new Error("Error al leer el archivo");
     }
   }
-
+  async updateFile(product) {
+    try {
+      const readContent = await this.readFile();
+      readContent.push(product);
+      await fs.promises.writeFile(path, JSON.stringify(readContent, null, 2));
+    } catch (error) {
+      throw new Error("Error al escribir archivo");
+    }
+  }
   async saveInFile(product) {
     product.id = `${Date.now()}`;
     try {
