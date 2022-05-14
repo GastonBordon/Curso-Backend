@@ -31,29 +31,40 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   let productById = await Contenedor.getById(req.params.id);
-  let newValues = req.body;
-  for (const element in productById) {
-    for (const elem in newValues) {
-      if (element == elem) {
-        productById[element] = newValues[elem];
+  if (!productById) {
+    res.json({
+      error: "producto no encontrado",
+    });
+  } else {
+    let newValues = req.body;
+    for (const element in productById) {
+      for (const elem in newValues) {
+        if (element == elem) {
+          productById[element] = newValues[elem];
+        }
       }
     }
+    await Contenedor.deleteById(req.params.id);
+    await Contenedor.updateFile(productById);
+    res.json({
+      msg: productById,
+    });
   }
-  await Contenedor.deleteById(req.params.id);
-  await Contenedor.updateFile(productById);
-
-  res.json({
-    msg: productById,
-  });
 });
 
 router.delete("/:id", async (req, res) => {
-  let removedProduct = await Contenedor.deleteById(req.params.id);
-
-  res.json({
-    msg: "Se ha eliminado el producto",
-    removedProduct,
-  });
+  let productById = await Contenedor.getById(req.params.id);
+  if (!productById) {
+    res.json({
+      error: "producto no encontrado",
+    });
+  } else {
+    await Contenedor.deleteById(req.params.id);
+    res.json({
+      msg: "Se ha eliminado:",
+      productById,
+    });
+  }
 });
 
 module.exports = router;

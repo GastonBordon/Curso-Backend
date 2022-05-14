@@ -1,12 +1,11 @@
-[
-  {
+[{
     "titulo": "ayelen",
     "precio": "15000",
     "miniatura": "asdasdasd",
     "id": "1652311320131"
   },
   {
-    "title": "andres",
+    "title": "alberto",
     "price": 35600,
     "thumbnail": "https://cdn4.iconfinder.com/data/icons/education-759/2050/Education_flat-10-512.png",
     "id": "1652323236109"
