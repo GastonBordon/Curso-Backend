@@ -4,9 +4,9 @@ const { Contenedor } = require("../contenedor.js");
 
 router.get("/", async (req, res) => {
   let products = await Contenedor.getAllFile();
-  res.render("layouts/index", { products, listProducts: true });
-  //res.render("layout", { products, listProducts: true }); CONFIGURACION PARA PUG
-  //res.render("main", { products, listProducts: true });  CONFIGURACION PARA HBS
+  res.json({
+    data: products,
+  });
 });
 
 router.get("/:id", async (req, res) => {

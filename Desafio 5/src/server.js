@@ -3,6 +3,7 @@ const mainRouter = require("./routes/index");
 const bodyParser = require("body-parser");
 const path = require("path");
 const { engine } = require("express-handlebars");
+const { Contenedor } = require("./contenedor.js");
 
 const app = express();
 const port = 8080;
@@ -33,9 +34,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
+  console.log("HOLA ");
   //res.render("layout");  CONFIGURACION PARA PUG
   //res.render("main", { layout: "index" });    CONFIGURACION PARA HBS
   res.render("layouts/index", { listProducts: false });
+});
+
+app.get("/productos", async (req, res) => {
+  let products = await Contenedor.getAllFile();
+  console.log(products);
+  res.render("layouts/index", { products, listProducts: true });
+
+  //res.render("layout", { products, listProducts: true }); CONFIGURACION PARA PUG
+  //res.render("main", { products, listProducts: true });  CONFIGURACION PARA HBS
 });
 
 app.use("/api", mainRouter);
