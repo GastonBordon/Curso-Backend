@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = "./dataBase/carts.txt";
-const Cart = require("./cartClass.js");
 
 class CartContainer {
   constructor(path) {
@@ -34,20 +33,29 @@ class CartContainer {
       throw new Error("Error al leer el archivo");
     }
   }
+
   async updateFile(data) {
     try {
       const readContent = await this.readFile();
-      this.deleteById(data.id);
-      readContent.push(data);
+
+      for (let index = 0; index < readContent.length; index++) {
+        const element = readContent[index];
+        if (element.id === data.id) {
+          readContent[index] = data;
+        }
+      }
+
       await fs.promises.writeFile(path, JSON.stringify(readContent, null, 2));
     } catch (error) {
       throw new Error("Error al escribir archivo");
     }
   }
+
   async saveInFile(data) {
     if (data === undefined) {
       data = {};
       data.id = `${Date.now()}`;
+      data.productos = [];
     }
     try {
       const readContent = await this.readFile();
@@ -68,9 +76,7 @@ class CartContainer {
   }
 
   async getById(id) {
-    console.log(id);
     let productsArray = await this.readFile();
-    console.log(productsArray);
     const foundProduct = productsArray.find((prod) => prod.id === id);
     if (foundProduct !== undefined) {
       return foundProduct;

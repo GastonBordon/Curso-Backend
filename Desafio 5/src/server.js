@@ -3,7 +3,7 @@ const mainRouter = require("./routes/index");
 const bodyParser = require("body-parser");
 const path = require("path");
 const { engine } = require("express-handlebars");
-const { Contenedor } = require("./contenedor.js");
+const { Contenedor } = require("./");
 
 const app = express();
 const port = 8080;
@@ -43,8 +43,8 @@ app.get("/", (req, res) => {
 app.get("/productos", async (req, res) => {
   let products = await Contenedor.getAllFile();
   console.log(products);
-  res.render("layouts/index", { products, listProducts: true });
-
+  // res.render("layouts/index", { products, listProducts: true });
+  console.log("hola");
   //res.render("layout", { products, listProducts: true }); CONFIGURACION PARA PUG
   //res.render("main", { products, listProducts: true });  CONFIGURACION PARA HBS
 });

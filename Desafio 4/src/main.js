@@ -22,5 +22,7 @@ app.get("/", (req, res) => {
 
 app.use("/api", mainRouter);
 
+mainRouter.get("/productos", )
+
 const publicFolderPath = path.resolve(__dirname, "../public");
 app.use(express.static(publicFolderPath));

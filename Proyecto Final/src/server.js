@@ -17,8 +17,8 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  console.log("Hola");
-});
-
 app.use("/api", mainRouter);
+
+app.all("*", (req, res) => {
+  res.status(404).json({ res: "Ruta no implementada" });
+});
