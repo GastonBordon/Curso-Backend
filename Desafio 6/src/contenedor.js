@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = "./productos.txt";
 class ContenedorArchivo {
   constructor(path) {
     this.path = path;
@@ -82,8 +81,4 @@ class ContenedorArchivo {
   }
 }
 
-const contenedor = new ContenedorArchivo(path);
-
-module.exports = {
-  Contenedor: contenedor,
-};
+module.exports = ContenedorArchivo;

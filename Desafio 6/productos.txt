@@ -1,5 +1,4 @@
-[
-  {
+[{
     "title": "Helado",
     "price": "300",
     "thumbnail": "https://cdn0.iconfinder.com/data/icons/food-set-4/64/Artboard_14-256.png",
@@ -22,5 +21,4 @@
     "price": "1000",
     "thumbnail": "https://cdn0.iconfinder.com/data/icons/food-set-4/64/Artboard_16_copy-256.png",
     "id": "1652827398698"
-  }
-]
+  }]

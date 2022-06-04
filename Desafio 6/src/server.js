@@ -4,7 +4,7 @@ const { Server: SocketServer } = require("socket.io");
 const mainRouter = require("./routes/index");
 const path = require("path");
 const { engine } = require("express-handlebars");
-const { Contenedor } = require("./contenedor.js");
+const ContenedorArchivo = require("./contenedor.js");
 
 const app = express();
 const httpServer = new HttpServer(app);
@@ -39,11 +39,8 @@ app.get("/", (req, res) => {
   res.render("main", { layout: "index" });
 });
 
-let products = [];
-let mensajes = [];
-Contenedor.getAllFile()
-  .then((data) => (products = data))
-  .catch((error) => console.log(error));
+const contenedorProds = new ContenedorArchivo("./productos.txt");
+const contenedorMjs = new ContenedorArchivo("./mensajes.txt");
 
 app.use("/api", mainRouter);
 
@@ -55,21 +52,22 @@ server.on("error", (err) => {
   console.log("Error de servidor atajado", err);
 });
 
-io.on("connection", (socket) => {
+io.on("connection", async (socket) => {
+  let products = await contenedorProds.getAllFile();
   console.log("alguien se conecto");
-
   //Enviar la info
   socket.emit("productos", products);
 
   //Escucha los cambios
-  socket.on("product", (data) => {
-    products = [...products, data];
+  socket.on("product", async (data) => {
+    products = await contenedorProds.saveInFile();
     io.sockets.emit("productos", products);
   });
 
+  let mensajes = await contenedorMjs.getAllFile();
   socket.emit("chat", mensajes);
-  socket.on("nuevoMensaje", (data) => {
-    mensajes = [...mensajes, data];
+  socket.on("nuevoMensaje", async (data) => {
+    mensajes = await contenedorMjs.saveInFile();
     io.sockets.emit("chat", mensajes);
   });
 });
